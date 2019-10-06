@@ -41,19 +41,14 @@ class MateriaCursadaController extends Controller
 
     public function store(Request $request)
     {
-        $materias_cursada = Materias_cursada::create($request->all());
+        $materia = new Materia($request->input('clave'), $request->input('matricula'));
 
-        return response()->json($materias_cursada, 201);
-
-        // $materia = new Materia('CCOS 001', 201700181);
-        // $materia = new Materia('CCOS 007', 201700181);
-        // $materia = new Materia('ICCS 006', 201700181);
-        // $materia = new Materia('ICCS 254', 201700181);
-        // $materia = new Materia('CCOS 261', 201700181);
-        // return [$materia->estaMarcada()];
-        // return [$materia->cumplePrerequisitos()];
-        // return $materia->getRequisitos();
-        // return $materia->getSiguientes();
+        if ($materia->cumplePrerequisitos() && !$materia->estaMarcada()) {
+            Materias_cursada::create($request->all());
+            return response()->json(true, 201);
+        } else {
+            return response()->json(false, 200);
+        }
     }
 
     public function delete(Request $request)
