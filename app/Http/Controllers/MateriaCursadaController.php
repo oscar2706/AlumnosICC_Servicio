@@ -14,6 +14,23 @@ class MateriaCursadaController extends Controller
         return Materias_cursada::all();
     }
 
+    public function show(Request $request)
+    {
+        if ($request->input('clave') && $request->input('matricula')) {
+            $materia_encontrada = DB::table('Materias_cursadas')
+                ->where('clave', '=', $request->input('clave'))
+                ->where('matricula', '=', $request->input('matricula'))
+                ->get()->isNotEmpty();
+            if ($materia_encontrada)
+                return ['marcada' => true];
+            else
+                return ['marcada' => false];
+        } else
+            return response()->json([
+                'error' => 'materia y/o clave no especificada',
+            ], 404);
+    }
+
     public function showFromAlumno($matricula)
     {
         return DB::table('Materias_cursadas')
