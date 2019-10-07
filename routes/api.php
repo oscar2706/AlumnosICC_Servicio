@@ -8,6 +8,7 @@ Route::get('alumnos', 'AlumnoController@index');
 Route::get('alumnos/{alumno}', 'AlumnoController@show');
 Route::put('alumnos/{alumno}', 'AlumnoController@update');
 Route::get('secciones/{seccion}/alumnos', 'AlumnoController@showFromSeccion');
+Route::get('alumnos/{alumno}/creditos', 'AlumnoController@credits');
 
 // Trabajadores
 Route::get('trabajadores', 'TrabajadorController@index');

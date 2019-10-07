@@ -26,6 +26,14 @@ class AlumnoController extends Controller
             ->get();
     }
 
+    public function credits($matricula)
+    {
+        return DB::table('Materias')
+            ->join('Materias_cursadas', 'Materias.clave', '=', 'Materias_cursadas.clave')
+            ->where('Materias_cursadas.matricula', '=', $matricula)
+            ->sum('creditos');
+    }
+
     public function store(Request $request)
     {
         $alumno = Alumno::create($request->all());
