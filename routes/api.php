@@ -9,6 +9,7 @@ Route::get('alumnos/{alumno}', 'AlumnoController@show');
 Route::put('alumnos/{alumno}', 'AlumnoController@update');
 Route::get('secciones/{seccion}/alumnos', 'AlumnoController@showFromSeccion');
 Route::get('alumnos/{alumno}/creditos', 'AlumnoController@credits');
+Route::get('alumnos/{alumno}/tutor', 'AlumnoController@tutor');
 
 // Trabajadores
 Route::get('trabajadores', 'TrabajadorController@index');

@@ -34,6 +34,15 @@ class AlumnoController extends Controller
             ->sum('creditos');
     }
 
+    public function tutor($matricula)
+    {
+        return DB::table('Alumnos')
+            ->join('Seccions', 'Alumnos.seccion_id', '=', 'Seccions.id')
+            ->join('Trabajadors', 'Seccions.trabajador_id', '=', 'Trabajadors.id')
+            ->where('Alumnos.matricula', '=', $matricula)
+            ->get('Trabajadors.nombre');
+    }
+
     public function store(Request $request)
     {
         $alumno = Alumno::create($request->all());
