@@ -17,4 +17,11 @@ class ProyeccionController extends Controller
     {
         return $proyeccion;
     }
+
+    public function store(Request $request)
+    {
+        $proyeccion = Proyeccion::create($request->all());
+
+        return response()->json($proyeccion, 201);
+    }
 }

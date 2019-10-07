@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Proyeccion extends Model
+class Avance extends Model
 {
     public $timestamps = false;
     protected $fillable = [

@@ -34,3 +34,8 @@ Route::delete('materias_cursadas', 'MateriaCursadaController@delete');
 //Proyecciones
 Route::get('proyecciones', 'ProyeccionController@index');
 Route::get('proyecciones/{proyeccion}', 'ProyeccionController@show');
+Route::post('proyecciones', 'ProyeccionController@store');
+
+//Avances
+Route::get('avances', 'AvanceController@index');
+Route::post('avances', 'AvanceController@store');
