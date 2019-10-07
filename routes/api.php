@@ -18,6 +18,7 @@ Route::get('trabajadores/{trabajador}', 'TrabajadorController@show');
 Route::get('secciones', 'SeccionController@index');
 Route::get('secciones/{seccion}', 'SeccionController@show');
 Route::get('trabajadores/{trabajador}/secciones', 'SeccionController@showFromTrabajador');
+Route::put('secciones/{seccion}', 'SeccionController@update');
 
 //Materias
 Route::get('materias', 'MateriaController@index');
