@@ -13,6 +13,7 @@ Route::get('alumnos/{alumno}/creditos', 'AlumnoController@credits');
 // Trabajadores
 Route::get('trabajadores', 'TrabajadorController@index');
 Route::get('trabajadores/{trabajador}', 'TrabajadorController@show');
+Route::put('trabajadores/{trabajador}', 'TrabajadorController@update');
 
 // Secciones
 Route::get('secciones', 'SeccionController@index');
@@ -25,7 +26,6 @@ Route::get('materias', 'MateriaController@index');
 Route::get('materias/{materia}', 'MateriaController@show');
 Route::get('alumnos/{alumno}/materias_cursadas', 'MateriaCursadaController@showFromAlumno');
 Route::get('proyecciones/materias_disponibles/{matricula}', 'MateriaController@proyeccion');
-// todo: Materias marcadas en la proyeccion
 
 //Materias cursadas
 Route::get('materias_cursadas', 'MateriaCursadaController@index');

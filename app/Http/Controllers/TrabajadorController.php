@@ -23,4 +23,11 @@ class TrabajadorController extends Controller
     {
         SeccionController::index();
     }
+
+    public function update(Request $request, Trabajador $trabajador)
+    {
+        $trabajador->update($request->all());
+
+        return response()->json($trabajador, 200);
+    }
 }
