@@ -22,7 +22,7 @@ Route::get('trabajadores/{trabajador}/secciones', 'SeccionController@showFromTra
 Route::get('materias', 'MateriaController@index');
 Route::get('materias/{materia}', 'MateriaController@show');
 Route::get('alumnos/{alumno}/materias_cursadas', 'MateriaCursadaController@showFromAlumno');
-// todo: Materias para proyeccion en base a las cursadas
+Route::get('proyecciones/materias_disponibles/{matricula}', 'MateriaController@proyeccion');
 // todo: Materias marcadas en la proyeccion
 
 //Materias cursadas

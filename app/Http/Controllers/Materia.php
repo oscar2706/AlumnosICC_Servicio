@@ -55,6 +55,11 @@ class Materia
         return $this->materias_siguientes;
     }
 
+    public function getClave()
+    {
+        return $this->clave;
+    }
+
     public function cumplePrerequisitos()
     {
         if (sizeof($this->materias_requisito)  == 0)
