@@ -26,6 +26,7 @@ Route::put('secciones/{seccion}', 'SeccionController@update');
 Route::get('materias', 'MateriaController@index');
 Route::get('materias/{materia}', 'MateriaController@show');
 Route::get('alumnos/{alumno}/materias_cursadas', 'MateriaCursadaController@showFromAlumno');
+Route::get('alumnos/{alumno}/mapa_materias', 'MateriaCursadaController@mapa');
 Route::get('proyecciones/materias_disponibles/{matricula}', 'MateriaController@proyeccion');
 
 //Materias cursadas

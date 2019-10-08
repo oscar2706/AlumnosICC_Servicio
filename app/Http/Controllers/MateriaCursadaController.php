@@ -51,6 +51,14 @@ class MateriaCursadaController extends Controller
         }
     }
 
+    public function mapa($matricula)
+    {
+        return DB::select(DB::raw("SELECT *,
+            (select COUNT(*)>0 from AlumnosICC.Materias_Cursadas
+            where Materias_Cursadas.matricula = '$matricula' and Materias_Cursadas.clave = M.clave) as marcada
+            FROM AlumnosICC.Materias as M"));
+    }
+
     public function delete(Request $request)
     {
         $clave = $request->input('clave');
