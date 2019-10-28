@@ -37,6 +37,7 @@ Route::delete('materias_cursadas', 'MateriaCursadaController@delete');
 
 //Materias proyeccion
 Route::get('materias_proyecciones', 'MateriaProyeccionController@index');
+Route::get('materias_proyecciones', 'MateriaProyeccionController@materiasProyeccion');
 Route::post('materias_proyecciones', 'MateriaProyeccionController@store');
 
 //Proyecciones
